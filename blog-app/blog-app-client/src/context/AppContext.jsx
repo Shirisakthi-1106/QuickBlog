@@ -30,9 +30,10 @@ export const AppProvider = ({ children }) => {
     console.log("🪵 [AppContext] Stored token from localStorage:", storedToken);
 
     if (storedToken) {
-      setToken(storedToken);
+  setToken(storedToken);
+  axios.defaults.headers.common['Authorization'] = storedToken;
 
-      axios.defaults.headers.common['Authorization'] = `Bearer ${storedToken}`;
+
 
       console.log("✅ [AppContext] Authorization header set:", axios.defaults.headers.common['Authorization']);
     } else {
