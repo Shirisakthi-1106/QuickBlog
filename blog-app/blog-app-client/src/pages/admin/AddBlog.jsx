@@ -61,7 +61,7 @@ const AddBlog = () => {
 
       const { data } = await axios.post('/api/blog/add', formData, {
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: token,
           'Content-Type': 'multipart/form-data'
         }
       })
